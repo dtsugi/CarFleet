@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <link href="styles/generalStyle.css" rel="stylesheet" type="text/css">
+    <title>Rule - My Generator</title>
+</head>
+
+<body onload="Init()">
+    <main>
+        <pre>
+"use strict";
+
+var OPERATION_TYPES = require('./constants/OPERATION_TYPES');
+var <label name="lblCrudName">#lblCrudName</label> = require('./<label name="lblCrudName">#lblCrudName</label>');
+var Utils = require('./Utils');
+
+module.exports = <label name="lblRuleName">#lblRuleName</label>;
+
+function <label name="lblRuleName">#lblRuleName</label>() {
+    this.ComponentName = "<label name="lblRuleName">#lblRuleName</label>";
+    <label name="lblCrudName">#lblCrudName</label>.call(this);
+}
+
+<label name="lblRuleName">#lblRuleName</label>.prototype = new <label name="lblCrudName">#lblCrudName</label>();
+
+<label name="lblRuleName">#lblRuleName</label>.prototype.Insert = function Insert(userEntity, mapRoute, callback,response) {
+    mapRoute = Utils.SetMapRoute(mapRoute, this.ComponentName, "Insert");
+    this.ExecuteStatement(userEntity, OPERATION_TYPES.INSERT, mapRoute, callback,response);
+}
+
+<label name="lblRuleName">#lblRuleName</label>.prototype.DeleteById = function DeleteById(userEntity) {
+    mapRoute = Utils.SetMapRoute(mapRoute, this.ComponentName, "DeleteById");
+    //this.ExecuteStatement(userEntity, OPERATION_TYPES.DELETE, mapRoute);
+}
+
+<label name="lblRuleName">#lblRuleName</label>.prototype.Update = function Update(userEntity) {
+    mapRoute = Utils.SetMapRoute(mapRoute, this.ComponentName, "Update");
+    //this.ExecuteStatement(userEntity, OPERATION_TYPES.UPDATE, mapRoute);
+}
+
+<label name="lblRuleName">#lblRuleName</label>.prototype.SelectById = function SelectById(userEntity) {
+    mapRoute = Utils.SetMapRoute(mapRoute, this.ComponentName, "SelectById");
+    //this.ExecuteStatement(userEntity, OPERATION_TYPES.SELECT, mapRoute);
+}
+
+<label name="lblRuleName">#lblRuleName</label>.prototype.SelectAll = function SelectAll(mapRoute, callback,response) {
+    mapRoute = Utils.SetMapRoute(mapRoute, this.ComponentName, "SelectAll");
+    if (Utils.IsValidateParametersFunction(mapRoute, { mapRoute, callback })) {
+        return this.ExecuteStatement(null, OPERATION_TYPES.SELECT_ALL, mapRoute, callback,response);
+    }
+}
+        </pre>
+    </main>
+    <script type="text/javascript" src="scripts/constants.js"></script>
+    <script type="text/javascript" src="scripts/utils.js"></script>
+    <script type="text/javascript" src="scripts/utilsController.js"></script>
+    <script type="text/javascript" src="scripts/ruleController.js"></script>
+</body>
+
+</html>

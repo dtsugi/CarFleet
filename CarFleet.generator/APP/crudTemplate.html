@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <link href="styles/generalStyle.css" rel="stylesheet" type="text/css">
+    <title>Crud - My Generator</title>
+</head>
+
+<body onload="Init()">
+    <main>
+        <pre>
+using System.Linq;
+using CarFleet.Std;
+using CarFleet.Models;
+using System.Data;
+
+namespace CarFleet.DAL
+{
+    public class <label name="lblCrudName">#lblCrudName</label> : CrudEntityBase< <label name="lblEntityName">#lblEntityName</label> >
+    {
+        public override void Map(IDataRecord record, <label name="lblEntityName">#lblEntityName</label> entity)
+        {
+            <div id="divParametersMap">#divParametersMap</div>
+        }
+
+        public override <label name="lblEntityName">#lblEntityName</label> SelectById(int id)
+        {
+            using (var command = base.GetContextConnection.CreateCommand())
+            {
+                command.AddParameter("Id", SqlDbType.TinyInt, id);
+                command.CommandText = "sp_DriverInsert";
+                command.CommandType = CommandType.StoredProcedure;
+                return ToList(command).FirstOrDefault();
+            }
+        }
+    }
+}
+
+       </pre>
+    </main>
+    <script type="text/javascript" src="scripts/constants.js"></script>
+    <script type="text/javascript" src="scripts/utils.js"></script>
+    <script type="text/javascript" src="scripts/utilsController.js"></script>
+    <script type="text/javascript" src="scripts/crudController.js"></script>
+</body>
+
+</html>

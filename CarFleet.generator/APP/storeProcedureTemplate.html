@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <link href="styles/generalStyle.css" rel="stylesheet" type="text/css">
+    <title>Store Procedure - My Generator</title>
+</head>
+
+<body onload="Init()">
+    <main>
+        <pre>
+USE <label id="lblDatabase">#lblDatabase</label>;
+DROP PROCEDURE IF EXISTS <label id="lblStpName">#lblStpName</label>;
+DELIMITER $$
+CREATE PROCEDURE <label id="lblStpNameTwo">#lblStpName</label>
+(
+  <div id="divFields">#divFields</div> 
+)
+BEGIN
+
+/* INSERT */
+IF OPERACION_OUT = 0 THEN 
+<div id="divInsert">#divInsert</div> 
+/* DELETE */
+ELSEIF OPERACION_OUT = 1 THEN 
+<div id="divDelete">#divDelete</div>  
+/* UPDATE */
+ELSEIF OPERACION_OUT = 2 THEN 
+<div id="divUpdate">#divUpdate</div>  
+/* SELECT BY ID */
+ELSEIF OPERACION_OUT = 3 THEN 
+<div id="divSelectById">#divSelectById</div>
+/* SELECT ALL */
+ELSEIF OPERACION_OUT = 4 THEN 
+<div id="divSelectAll">#divSelectAll</div>
+END IF;
+
+END
+            </pre>
+    </main>
+    <script type="text/javascript" src="scripts/constants.js"></script>
+    <script type="text/javascript" src="scripts/utils.js"></script>
+    <script type="text/javascript" src="scripts/utilsController.js"></script>
+    <script type="text/javascript" src="scripts/storeProcedureController.js"></script>
+</body>
+
+</html>

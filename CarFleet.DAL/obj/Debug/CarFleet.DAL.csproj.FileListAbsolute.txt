@@ -1,0 +1,11 @@
+C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.DAL\bin\Debug\CarFleet.DAL.dll
+C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.DAL\bin\Debug\CarFleet.DAL.pdb
+C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.DAL\bin\Debug\CarFleet.Models.dll
+C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.DAL\bin\Debug\CarFleet.Std.dll
+C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.DAL\bin\Debug\CarFleet.Utils.dll
+C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.DAL\bin\Debug\CarFleet.Models.pdb
+C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.DAL\bin\Debug\CarFleet.Std.pdb
+C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.DAL\bin\Debug\CarFleet.Utils.pdb
+C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.DAL\obj\Debug\CarFleet.DAL.csprojResolveAssemblyReference.cache
+C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.DAL\obj\Debug\CarFleet.DAL.dll
+C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.DAL\obj\Debug\CarFleet.DAL.pdb

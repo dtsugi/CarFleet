@@ -1,0 +1,8 @@
+{
+  "name": "API-CarFleet.generator ",
+  "version": "1.0.0",
+  "description": "CarFleet.generator",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {}
+}

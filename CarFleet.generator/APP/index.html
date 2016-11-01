@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <link href="styles/generalStyle.css" rel="stylesheet" type="text/css">
+    <title>My Generator</title>
+</head>
+
+<body onload="Connect(false)">
+    <main>
+        <div id="divLogin">
+            <!--<form action="http://localhost:8000/User?op=Connect" method="POST">-->
+            <h1>My Generator</h1>
+            <br>
+            <label for="lblHost">Host</label>
+            <input type="text" placeholder="Host" id="txtHost" value="fv62cctyh3.database.windows.net">
+
+            <label for="lblUser">User</label>
+            <input type="text" placeholder="User" id="txtUser" value="geoadmin@fv62cctyh3">
+
+            <label for="lblPassword">Password</label>
+            <input type="text" placeholder="Password" id="txtPassword" value="Admin$11">
+
+            <label for="lblDatabase">Database</label>
+            <input type="text" placeholder="Database" id="txtDatabase" value="CarFleet">
+
+            <input type="submit" value="Connect" id="btnConnect" onclick="Connect(true)">
+            <!--</form>-->
+        </div>
+        <div id="divMain" style="display:none">
+            <br>
+            <b>Connection String:</b>
+            <label id="lblConnectionString"></label>
+            <br>
+            <br> Tables:
+            <select id="cboTables" onchange="GetColumns();">                
+            </select>
+            <br>
+            <div id="divInfoColumns">
+            </div>
+            <input type="submit" value="Re-Connect" onclick="Connect(false)">
+        </div>
+    </main>
+    <script type="text/javascript" src="scripts/constants.js"></script>
+    <script type="text/javascript" src="scripts/utils.js"></script>
+    <script type="text/javascript" src="scripts/indexController.js"></script>
+</body>
+
+</html>
