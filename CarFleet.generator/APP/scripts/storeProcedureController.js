@@ -1,100 +1,72 @@
-var _lblDatabaseId = "lblDatabase";
-var _lblStpNameId = "lblStpName";
-var _lblStpNameTwoId = "lblStpNameTwo";
-var _divFieldsId = "divFields";
-var _divInsertId = "divInsert";
-var _divDeleteId = "divDelete";
-var _divUpdateId = "divUpdate";
-var _divSelectById = "divSelectById";
-var _divSelectAllId = "divSelectAll";
+var _lblTableName = "lblTableName";
+var _divParametersFullOutput = "divParametersFullOutput";
+var _divFieldsTableName = "divFieldsTableName";
+var _divFieldsInsertValues = "divFieldsInsertValues";
+var _divParametersSelectOutput = "divParametersSelectOutput";
+var _divSelectWhere = "divSelectWhere";
+var _divUpdateSet = "divUpdateSet";
+var _divWhereKeys = "divWhereKeys";
 
 function Init() {
-    var connection, fieldsObject, stpName;
+    var connection, fieldsObject, keysTableObject;
     fieldsObject = JSON.parse(_GetLocalStorage(_fieldsObject));
+    keysTableObject = JSON.parse(_GetLocalStorage(_keysTableObject));
+    fieldsObject = SetKeys(fieldsObject, keysTableObject);
     connection = JSON.parse(_GetLocalStorage(_connectionObject));
-    document.getElementById(_lblDatabaseId).innerHTML = connection.database;
-    stpName = GetStpName(connection.tableName);
-    document.getElementById(_lblStpNameId).innerHTML = document.getElementById(_lblStpNameTwoId).innerHTML = stpName;
-    document.getElementById(_divFieldsId).innerHTML = LoadDivFields(fieldsObject);
-    document.getElementById(_divInsertId).innerHTML = LoadDivInsert(connection.tableName, fieldsObject);
-    document.getElementById(_divDeleteId).innerHTML = LoadDivDelete(connection.tableName, fieldsObject);
-    document.getElementById(_divUpdateId).innerHTML = LoadDivUpdate(connection.tableName, fieldsObject);
-    document.getElementById(_divSelectById).innerHTML = LoadDivSelectById(connection.tableName, fieldsObject);
-    document.getElementById(_divSelectAllId).innerHTML = LoadDivSelectAll(connection.tableName);
+    SetTextElementByName(_lblTableName, connection.tableName);
+    LoadDivParametersFull(fieldsObject);
 }
 
-function LoadDivFields(fields) {
-    var text = "";
+function LoadDivParametersFull(fields) {
+    var outputParameters = "", fieldstable = "", valuesParameters = "", parametersSelectOutput = "", selectWhere = "", updateSet = "", whereKeys = "";
     for (i = 0; i < fields.length; i++) {
-        text += "IN " + fields[i].STP_NAME + " " + fields[i].COLUMN_TYPE + ",<br>";
-    }
-    text += "IN OPERACION_OUT INT";
-    return text;
-}
+        if (IsVarcharType(fields[i].DATA_TYPE)) {
+            outputParameters += "@" + fields[i].STP_NAME + "  " + fields[i].DATA_TYPE.toUpperCase() + "(" + fields[i].CHARACTER_MAXIMUM_LENGTH + ")";
+            if (fields[i].IS_KEY) {
+                parametersSelectOutput += "@" + fields[i].STP_NAME + "  " + fields[i].DATA_TYPE.toUpperCase() + "(" + fields[i].CHARACTER_MAXIMUM_LENGTH + ") <br>";
+            }
 
-function LoadDivInsert(tableName, fields) {
-    var insert = "INSERT INTO " + tableName + "(";
-    var values = "VALUES (";
-    for (i = 0; i < fields.length; i++) {
-        if (i == fields.length - 1) {
-            insert += fields[i].COLUMN_NAME + ")";
-            values += fields[i].STP_NAME + ")";
         }
         else {
-            insert += fields[i].COLUMN_NAME + ",";
-            values += fields[i].STP_NAME + ",";
+            outputParameters += "@" + fields[i].STP_NAME + "  " + fields[i].DATA_TYPE.toUpperCase();
+            if (fields[i].IS_KEY) {
+                parametersSelectOutput += "@" + fields[i].STP_NAME + "  " + fields[i].DATA_TYPE.toUpperCase() + "<br>";
+            }
+        }
+        fieldstable += fields[i].COLUMN_NAME;
+        valuesParameters += "@" + fields[i].STP_NAME;
+        if (fields[i].IS_KEY) {
+            selectWhere += "(" + fields[i].COLUMN_NAME + "= @" + fields[i].STP_NAME + " OR @" + fields[i].STP_NAME + " IS NULL ) <br>";
+            whereKeys += fields[i].COLUMN_NAME + "= @" + fields[i].STP_NAME + " AND <br>";
+        }
+        else {
+            updateSet += fields[i].COLUMN_NAME + "= @" + fields[i].STP_NAME + ",<br>";
+        }
+        if (i < (fields.length - 1)) {
+            outputParameters += ",<br>";
+            fieldstable += ",";
+            valuesParameters += ",";
         }
     }
-    return insert + "<br>" + values + ";";
+
+    SetTextElementByName(_divParametersFullOutput, outputParameters);
+    SetTextElementByName(_divFieldsTableName, fieldstable);
+    document.getElementById(_divFieldsInsertValues).innerHTML = valuesParameters;
+    SetTextElementByName(_divParametersSelectOutput,parametersSelectOutput);
+    SetTextElementByName(_divSelectWhere,selectWhere);         
+    document.getElementById(_divUpdateSet).innerHTML = updateSet;    
+    SetTextElementByName(_divWhereKeys,whereKeys);
 }
 
-function LoadDivDelete(tableName, fields) {
-    var text = "DELETE FROM " + tableName + "<br>WHERE ";
-    return text + LoadWhere(fields) + ";";
-}
-
-function LoadDivUpdate(tableName, fields) {
-    var text = "UPDATE " + tableName + "<br>SET ";
-    text += LoadSet(fields);
-    text += "<br>WHERE " + LoadWhere(fields);
-    return text + ";";
-}
-
-function LoadDivSelectById(tableName, fields) {
-    var text = "SELECT * FROM " + tableName + "<br>WHERE ";
-    return text + LoadWhere(fields) + ";";
-}
-
-function LoadDivSelectAll(tableName) {
-    return "SELECT * FROM " + tableName + ";";
-}
-
-function LoadWhere(fields) {
-    var text = "";
-    var existKey = false;
-    for (i = 0; i < fields.length; i++) {
-        if (fields[i].COLUMN_KEY) {
-            if (!existKey) {
-                text += fields[i].COLUMN_NAME + " = " + fields[i].STP_NAME;
-                existKey = true;
-            }
-            else {
-                text += "<br>AND " + fields[i].COLUMN_NAME + " = " + fields[i].STP_NAME;
+function SetKeys(fields, keysFields) {
+    for (i = 0; i < keysFields.length; i++) {
+        for (j = 0; j < fields.length; j++) {
+            if (keysFields[i].COLUMN_NAME == fields[j].COLUMN_NAME) {
+                fields[j].IS_KEY = true;
+                break;
             }
         }
     }
-    return text;
-}
-
-function LoadSet(fields) {
-    var text = "";
-    for (i = 0; i < fields.length; i++) {
-        if (i == fields.length - 1) {
-            text += fields[i].COLUMN_NAME + " = " + fields[i].STP_NAME;
-        }
-        else {
-            text += fields[i].COLUMN_NAME + " = " + fields[i].STP_NAME + ",<br>";
-        }
-    }
-    return text;
+    console.log(fields);
+    return fields;
 }

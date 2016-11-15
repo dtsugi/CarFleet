@@ -12,7 +12,7 @@ function Connect(isNew) {
             user: GetValueElement("txtUser"),
             password: GetValueElement("txtPassword"),
             database: GetValueElement("txtDatabase"),
-            options: { encrypt: false }            
+            options: { encrypt: true }
         };
         data = JSON.stringify(connection);
         _SetLocalStorage(_connectionObject, data);
@@ -58,7 +58,7 @@ function _callbackConnect() {
     }
 }
 
-function GetColumns() {
+function GetKeysTable() {
     var connection, data, cboTable, tableName;
     connection = JSON.parse(_GetLocalStorage(_connectionObject));
     if (connection) {
@@ -66,12 +66,40 @@ function GetColumns() {
         tableName = cboTable.options[cboTable.selectedIndex].value;
         connection.tableName = tableName;
         _SetLocalStorage(_connectionObject, JSON.stringify(connection));
-        SetLabelTextElement("lblConnectionString", _GetLocalStorage(_connectionObject));
+        httpRequest = new XMLHttpRequest();
+        httpRequest.open('POST', url + '/User?op=GetKeysTable', true);
+        httpRequest.onreadystatechange = _callbackGetKeysTable;
+        data = { connection: connection, tableName: tableName };
+        httpRequest.send(JSON.stringify(data));
+    } else {
+        SeeIndex();
+    }
+}
+
+function _callbackGetKeysTable() {
+    var result;
+    if (ValidateResponse(this)) {
+        console.log(this.response);
+        console.log("FINISHED _callbackGetKeysTable");
+        result = JSON.parse(this.response);
+        console.log(result);
+        if (result.error) {
+            console.log("ERROR en el result del _callbackGetKeysTable");
+        } else {
+            _SetLocalStorage(_keysTableObject, JSON.stringify(result.result));
+            SetLabelTextElement("lblKeysTable", _GetLocalStorage(_keysTableObject));
+            GetColumns();
+        }
+    }
+}
+
+function GetColumns() {
+    var connection = JSON.parse(_GetLocalStorage(_connectionObject));
+    if (connection) {
         httpRequest = new XMLHttpRequest();
         httpRequest.open('POST', url + '/User?op=GetColumns', true);
         httpRequest.onreadystatechange = _callbackGetColumns;
-        data = { connection: connection, tableName: tableName };
-        httpRequest.send(JSON.stringify(data));
+        httpRequest.send(JSON.stringify(connection));
     } else {
         SeeIndex();
     }
@@ -127,7 +155,7 @@ function Generate() {
     _SetLocalStorage(_fieldsObject, JSON.stringify(fieldList));
     window.open(_urlEntityTemplate);
     window.open(_urlCrudTemplate);
-    // window.open(_urlStoreProcedureTemplate);        
+    window.open(_urlStoreProcedureTemplate);
     // window.open(_urlRuleTemplate);
 }
 

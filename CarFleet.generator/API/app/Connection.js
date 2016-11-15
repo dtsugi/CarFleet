@@ -4,10 +4,10 @@ var sql = require('mssql');
 var LOGGER_TYPES = require('./constants/LOGGER_TYPES');
 
 var config = {
-    "server": "127.0.0.1"
-    , "user": "usuario"
-    , "password": "password"
-    , "database": "baseDeDatos"
+    "server": "fv62cctyh3.database.windows.net"
+    , "user": "geoadmin@fv62cctyh3"
+    , "password": "Admin$11"
+    , "database": "CarFleet"
 };
 
 exports._CallQuery = function _CallQuery(connection, query, callback, response) {

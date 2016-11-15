@@ -20,6 +20,9 @@ function Route(pathName, query, request, response) {
 				case "GetColumns":
 					controller.ProcessRequest(request, response, controller.GetColumns);
 					break;
+				case "GetKeysTable":
+					controller.ProcessRequest(request, response, controller.GetKeysTable);
+					break;
 				default:
 					NotFound(response);
 					break;

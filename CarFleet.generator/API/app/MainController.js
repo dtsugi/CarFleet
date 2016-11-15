@@ -8,9 +8,15 @@ function Connect(request, response, connection) {
     Connection._CallQuery(connection, sqlCall, CallbackMainController, response);
 }
 
-function GetColumns(request, response, data) {
+function GetColumns(request, response, connection) {
+    console.log(connection);
+    var sqlCall = "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_CATALOG ='" + connection.database + "' AND TABLE_NAME = '" + connection.tableName + "'";
+    Connection._CallQuery(connection, sqlCall, CallbackMainController, response);
+}
+
+function GetKeysTable(request, response, data) {
     console.log(data);
-    var sqlCall = "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_CATALOG ='" + data.connection.database + "' AND TABLE_NAME = '" + data.tableName + "'";
+    var sqlCall = "SELECT * FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE WHERE TABLE_NAME ='" + data.tableName + "'";
     Connection._CallQuery(data.connection, sqlCall, CallbackMainController, response);
 }
 
@@ -53,4 +59,5 @@ function DescribeRequest(request, response, callback) {
 exports.Connect = Connect;
 exports.GetColumns = GetColumns;
 exports.ProcessRequest = ProcessRequest;
+exports.GetKeysTable = GetKeysTable;
 

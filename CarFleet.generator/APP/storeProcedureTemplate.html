@@ -11,34 +11,76 @@
 <body onload="Init()">
     <main>
         <pre>
-USE <label id="lblDatabase">#lblDatabase</label>;
-DROP PROCEDURE IF EXISTS <label id="lblStpName">#lblStpName</label>;
-DELIMITER $$
-CREATE PROCEDURE <label id="lblStpNameTwo">#lblStpName</label>
+/* PROCEDURE INSERT */
+IF EXISTS (Select * From dbo.sysobjects Where id = object_id(N'dbo.stp_<label name="lblTableName">#lblTableName</label>Insert') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+    drop procedure dbo.stp_<label name="lblTableName">#lblTableName</label>Insert
+GO
+CREATE PROCEDURE dbo.stp_<label name="lblTableName">#lblTableName</label>Insert
 (
-  <div id="divFields">#divFields</div> 
+    <div name="divParametersFullOutput">#divParametersFullOutput</div>
 )
+AS
 BEGIN
-
-/* INSERT */
-IF OPERACION_OUT = 0 THEN 
-<div id="divInsert">#divInsert</div> 
-/* DELETE */
-ELSEIF OPERACION_OUT = 1 THEN 
-<div id="divDelete">#divDelete</div>  
-/* UPDATE */
-ELSEIF OPERACION_OUT = 2 THEN 
-<div id="divUpdate">#divUpdate</div>  
-/* SELECT BY ID */
-ELSEIF OPERACION_OUT = 3 THEN 
-<div id="divSelectById">#divSelectById</div>
-/* SELECT ALL */
-ELSEIF OPERACION_OUT = 4 THEN 
-<div id="divSelectAll">#divSelectAll</div>
-END IF;
-
+    INSERT INTO <label name="lblTableName">#lblTableName</label>
+    (<div name="divFieldsTableName">#divFieldsTableName</div>)
+    VALUES
+    (<div id="divFieldsInsertValues">#divFieldsInsertValues</div>)
 END
-            </pre>
+        </pre>
+        <hr>
+        <pre>
+/* PROCEDURE SELECT BY ID OR ALL */
+IF EXISTS (Select * From dbo.sysobjects Where id = object_id(N'dbo.stp_<label name="lblTableName">#lblTableName</label>Select') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+    drop procedure dbo.stp_<label name="lblTableName">#lblTableName</label>Select
+GO
+CREATE PROCEDURE dbo.stp_<label name="lblTableName">#lblTableName</label>Select
+(
+    <div name="divParametersSelectOutput">#divParametersSelectOutput</div>
+)
+AS
+BEGIN
+    SELECT 
+        <div name="divFieldsTableName">#divFieldsTableName</div>
+    FROM dbo.<label name="lblTableName">#lblTableName</label>
+    WHERE <div name="divSelectWhere">#divSelectByIdWhere</div>    
+END
+</pre>
+        <hr>
+        <pre>
+/* PROCEDURE UPDATE */
+IF EXISTS (Select * From dbo.sysobjects Where id = object_id(N'dbo.stp_<label name="lblTableName">#lblTableName</label>Update') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+    drop procedure dbo.stp_<label name="lblTableName">#lblTableName</label>Update
+GO
+CREATE PROCEDURE dbo.stp_<label name="lblTableName">#lblTableName</label>Update
+(
+    <div name="divParametersFullOutput">#divParametersFullOutput</div>
+)
+AS
+BEGIN
+    UPDATE dbo.<label name="lblTableName">#lblTableName</label>
+    SET
+        <div id="divUpdateSet">#divUpdateSet</div>
+    WHERE <div name="divWhereKeys">#divWhereKeys</div>    
+END
+
+        </pre>
+        <hr>
+        <pre>
+/* PROCEDURE DELETE BY ID OR ALL */
+IF EXISTS (Select * From dbo.sysobjects Where id = object_id(N'dbo.stp_<label name="lblTableName">#lblTableName</label>Delete') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+    drop procedure dbo.stp_<label name="lblTableName">#lblTableName</label>Delete
+GO
+CREATE PROCEDURE dbo.stp_<label name="lblTableName">#lblTableName</label>Delete
+(
+    <div name="divParametersSelectOutput">#divParametersSelectOutput</div>
+)
+AS
+BEGIN
+    DELETE FROM dbo.<label name="lblTableName">#lblTableName</label>
+    WHERE <div name="divSelectWhere">#divSelectWhere</div>    
+END
+
+        </pre>
     </main>
     <script type="text/javascript" src="scripts/constants.js"></script>
     <script type="text/javascript" src="scripts/utils.js"></script>
