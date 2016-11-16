@@ -24,3 +24,16 @@ C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.Utils.pdb
 C:\WORKSPACES\CarFleet\CarFleet.BLL\obj\Debug\CarFleet.BLL.csprojResolveAssemblyReference.cache
 C:\WORKSPACES\CarFleet\CarFleet.BLL\obj\Debug\CarFleet.BLL.dll
 C:\WORKSPACES\CarFleet\CarFleet.BLL\obj\Debug\CarFleet.BLL.pdb
+C:\Users\dforero\Desktop\TSUGI\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.BLL.dll
+C:\Users\dforero\Desktop\TSUGI\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.BLL.pdb
+C:\Users\dforero\Desktop\TSUGI\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.DAL.dll
+C:\Users\dforero\Desktop\TSUGI\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.Models.dll
+C:\Users\dforero\Desktop\TSUGI\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.Std.dll
+C:\Users\dforero\Desktop\TSUGI\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.Utils.dll
+C:\Users\dforero\Desktop\TSUGI\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.DAL.pdb
+C:\Users\dforero\Desktop\TSUGI\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.Models.pdb
+C:\Users\dforero\Desktop\TSUGI\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.Std.pdb
+C:\Users\dforero\Desktop\TSUGI\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.Utils.pdb
+C:\Users\dforero\Desktop\TSUGI\CarFleet\CarFleet.BLL\obj\Debug\CarFleet.BLL.csprojResolveAssemblyReference.cache
+C:\Users\dforero\Desktop\TSUGI\CarFleet\CarFleet.BLL\obj\Debug\CarFleet.BLL.dll
+C:\Users\dforero\Desktop\TSUGI\CarFleet\CarFleet.BLL\obj\Debug\CarFleet.BLL.pdb
