@@ -1,0 +1,13 @@
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Release\CarFleet.BLL.dll
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Release\CarFleet.BLL.pdb
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Release\CarFleet.DAL.dll
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Release\CarFleet.Models.dll
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Release\CarFleet.Std.dll
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Release\CarFleet.Utils.dll
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Release\CarFleet.DAL.pdb
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Release\CarFleet.Models.pdb
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Release\CarFleet.Std.pdb
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Release\CarFleet.Utils.pdb
+C:\WORKSPACES\CarFleet\CarFleet.BLL\obj\Release\CarFleet.BLL.csprojResolveAssemblyReference.cache
+C:\WORKSPACES\CarFleet\CarFleet.BLL\obj\Release\CarFleet.BLL.dll
+C:\WORKSPACES\CarFleet\CarFleet.BLL\obj\Release\CarFleet.BLL.pdb

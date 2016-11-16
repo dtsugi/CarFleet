@@ -12,9 +12,14 @@ namespace CarFleet.Test
     {
         static void Main(string[] args)
         {
-            DriverCrud driverCrud = new DriverCrud();
-            DriverEntity driver = driverCrud.SelectById(1);
-            var p = driver;
+            //DriverCrud driverCrud = new DriverCrud();
+            //DriverEntity driver = driverCrud.SelectById(1);
+            //var p = driver;
+
+            //CompanyCrud companyCrud = new CompanyCrud();
+            //CompanyEntity companyEntity = companyCrud.SelectById(87);
+            //List<CompanyEntity> companyEntity = companyCrud.Select(null, 1, null, null);
+            //var f = companyEntity;
         }
 
     }

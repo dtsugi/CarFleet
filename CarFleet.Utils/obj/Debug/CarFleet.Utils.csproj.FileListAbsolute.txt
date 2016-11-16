@@ -2,3 +2,8 @@ C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.Utils\bin
 C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.Utils\bin\Debug\CarFleet.Utils.pdb
 C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.Utils\obj\Debug\CarFleet.Utils.dll
 C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.Utils\obj\Debug\CarFleet.Utils.pdb
+C:\WORKSPACES\CarFleet\CarFleet.Utils\bin\Debug\CarFleet.Utils.dll
+C:\WORKSPACES\CarFleet\CarFleet.Utils\bin\Debug\CarFleet.Utils.pdb
+C:\WORKSPACES\CarFleet\CarFleet.Utils\obj\Debug\CarFleet.Utils.csprojResolveAssemblyReference.cache
+C:\WORKSPACES\CarFleet\CarFleet.Utils\obj\Debug\CarFleet.Utils.dll
+C:\WORKSPACES\CarFleet\CarFleet.Utils\obj\Debug\CarFleet.Utils.pdb

@@ -8,10 +8,10 @@ namespace CarFleet.API.Controllers
     {
         private DriverLogic _driverLogic = new DriverLogic();
 
-        [HttpGet, Route("api/driver/GetById/{id}")]
-        public IHttpActionResult GetById(int id)
+        [HttpGet, Route("api/driver/GetById/{id}/{idCompany}")]
+        public IHttpActionResult GetById(int? id, int? idCompany)
         {
-            return Ok(_driverLogic.GetById(id));
+            return Ok(_driverLogic.GetById(id, idCompany));
         }
     }
 }

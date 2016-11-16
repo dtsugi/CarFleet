@@ -11,3 +11,16 @@ C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.BLL\bin\D
 C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.Std.pdb
 C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.Utils.pdb
 C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.BLL\obj\Debug\CarFleet.BLL.csprojResolveAssemblyReference.cache
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.BLL.dll
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.BLL.pdb
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.DAL.dll
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.Models.dll
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.Std.dll
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.Utils.dll
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.DAL.pdb
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.Models.pdb
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.Std.pdb
+C:\WORKSPACES\CarFleet\CarFleet.BLL\bin\Debug\CarFleet.Utils.pdb
+C:\WORKSPACES\CarFleet\CarFleet.BLL\obj\Debug\CarFleet.BLL.csprojResolveAssemblyReference.cache
+C:\WORKSPACES\CarFleet\CarFleet.BLL\obj\Debug\CarFleet.BLL.dll
+C:\WORKSPACES\CarFleet\CarFleet.BLL\obj\Debug\CarFleet.BLL.pdb

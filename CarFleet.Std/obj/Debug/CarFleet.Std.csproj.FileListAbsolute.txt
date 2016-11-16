@@ -5,3 +5,10 @@ C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.Std\bin\D
 C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.Std\obj\Debug\CarFleet.Std.csprojResolveAssemblyReference.cache
 C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.Std\obj\Debug\CarFleet.Std.dll
 C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.Std\obj\Debug\CarFleet.Std.pdb
+C:\WORKSPACES\CarFleet\CarFleet.Std\bin\Debug\CarFleet.Std.dll
+C:\WORKSPACES\CarFleet\CarFleet.Std\bin\Debug\CarFleet.Std.pdb
+C:\WORKSPACES\CarFleet\CarFleet.Std\bin\Debug\CarFleet.Utils.dll
+C:\WORKSPACES\CarFleet\CarFleet.Std\bin\Debug\CarFleet.Utils.pdb
+C:\WORKSPACES\CarFleet\CarFleet.Std\obj\Debug\CarFleet.Std.csprojResolveAssemblyReference.cache
+C:\WORKSPACES\CarFleet\CarFleet.Std\obj\Debug\CarFleet.Std.dll
+C:\WORKSPACES\CarFleet\CarFleet.Std\obj\Debug\CarFleet.Std.pdb

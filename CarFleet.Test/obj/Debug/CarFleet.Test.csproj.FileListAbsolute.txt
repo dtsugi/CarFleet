@@ -12,3 +12,17 @@ C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.Test\bin\
 C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.Test\obj\Debug\CarFleet.Test.csprojResolveAssemblyReference.cache
 C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.Test\obj\Debug\CarFleet.Test.exe
 C:\Users\admin\documents\visual studio 2015\Projects\CarFleet\CarFleet.Test\obj\Debug\CarFleet.Test.pdb
+C:\WORKSPACES\CarFleet\CarFleet.Test\bin\Debug\CarFleet.Test.exe.config
+C:\WORKSPACES\CarFleet\CarFleet.Test\bin\Debug\CarFleet.Test.exe
+C:\WORKSPACES\CarFleet\CarFleet.Test\bin\Debug\CarFleet.Test.pdb
+C:\WORKSPACES\CarFleet\CarFleet.Test\bin\Debug\CarFleet.DAL.dll
+C:\WORKSPACES\CarFleet\CarFleet.Test\bin\Debug\CarFleet.Models.dll
+C:\WORKSPACES\CarFleet\CarFleet.Test\bin\Debug\CarFleet.Std.dll
+C:\WORKSPACES\CarFleet\CarFleet.Test\bin\Debug\CarFleet.Utils.dll
+C:\WORKSPACES\CarFleet\CarFleet.Test\bin\Debug\CarFleet.DAL.pdb
+C:\WORKSPACES\CarFleet\CarFleet.Test\bin\Debug\CarFleet.Models.pdb
+C:\WORKSPACES\CarFleet\CarFleet.Test\bin\Debug\CarFleet.Std.pdb
+C:\WORKSPACES\CarFleet\CarFleet.Test\bin\Debug\CarFleet.Utils.pdb
+C:\WORKSPACES\CarFleet\CarFleet.Test\obj\Debug\CarFleet.Test.csprojResolveAssemblyReference.cache
+C:\WORKSPACES\CarFleet\CarFleet.Test\obj\Debug\CarFleet.Test.exe
+C:\WORKSPACES\CarFleet\CarFleet.Test\obj\Debug\CarFleet.Test.pdb

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace CarFleet.Std
@@ -16,7 +17,7 @@ namespace CarFleet.Std
         //    return retval;
         //}
 
-        public abstract T SelectById(int id);
+        //public abstract T SelectById(int id);
 
         protected IEnumerable<T> ToList(IDbCommand command, bool isFKCall = false)
         {
@@ -42,6 +43,53 @@ namespace CarFleet.Std
                     _ContextConnectionManager = new ConnectionManager();
                 return _ContextConnectionManager;
             }
+        }
+
+        protected bool HasValueRecord(object recordObject)
+        {
+            return (recordObject != DBNull.Value);
+        }
+
+        protected object GetValueRecord(object recordObject, Utils.Constants.DATA_TYPES returnDataType)
+        {
+            object returnObject;
+            if (recordObject != DBNull.Value)
+            {
+                switch (returnDataType)
+                {
+                    case Utils.Constants.DATA_TYPES.DATETIME:
+                        if (!Utils.Utilities._IsCasteable(recordObject.ToString(), out returnObject, Utils.Constants.DATA_TYPES.DATETIME))
+                        {
+                            Utils.Log.LoggerBase._Log(string.Format("The recordObject {0} is not a valid DATETIME", recordObject.ToString()), this.GetType());
+                        }
+                        break;
+                    case Utils.Constants.DATA_TYPES.DOUBLE:
+                        if (!Utils.Utilities._IsCasteable(recordObject.ToString(), out returnObject, Utils.Constants.DATA_TYPES.DOUBLE))
+                        {
+                            Utils.Log.LoggerBase._Log(string.Format("The recordObject {0} is not a valid DOUBLE", recordObject.ToString()), this.GetType());
+                        }
+                        break;
+                    case Utils.Constants.DATA_TYPES.FLOAT:
+                        if (!Utils.Utilities._IsCasteable(recordObject.ToString(), out returnObject, Utils.Constants.DATA_TYPES.FLOAT))
+                        {
+                            Utils.Log.LoggerBase._Log(string.Format("The recordObject {0} is not a valid FLOAT", recordObject.ToString()), this.GetType());
+                        }
+                        break;
+                    case Utils.Constants.DATA_TYPES.INT:
+                        if (!Utils.Utilities._IsCasteable(recordObject.ToString(), out returnObject, Utils.Constants.DATA_TYPES.INT))
+                        {
+                            Utils.Log.LoggerBase._Log(string.Format("The recordObject {0} is not a valid INT", recordObject.ToString()), this.GetType());
+                        }
+                        break;
+                    case Utils.Constants.DATA_TYPES.VARCHAR:
+                    case Utils.Constants.DATA_TYPES.NVARCHAR:
+                        returnObject = recordObject.ToString();
+                        break;
+                }
+                return recordObject;
+            }
+            else
+                return null;
         }
     }
 }

@@ -1,0 +1,11 @@
+C:\WORKSPACES\CarFleet\CarFleet.DAL\bin\Release\CarFleet.DAL.dll
+C:\WORKSPACES\CarFleet\CarFleet.DAL\bin\Release\CarFleet.DAL.pdb
+C:\WORKSPACES\CarFleet\CarFleet.DAL\bin\Release\CarFleet.Models.dll
+C:\WORKSPACES\CarFleet\CarFleet.DAL\bin\Release\CarFleet.Std.dll
+C:\WORKSPACES\CarFleet\CarFleet.DAL\bin\Release\CarFleet.Utils.dll
+C:\WORKSPACES\CarFleet\CarFleet.DAL\bin\Release\CarFleet.Models.pdb
+C:\WORKSPACES\CarFleet\CarFleet.DAL\bin\Release\CarFleet.Std.pdb
+C:\WORKSPACES\CarFleet\CarFleet.DAL\bin\Release\CarFleet.Utils.pdb
+C:\WORKSPACES\CarFleet\CarFleet.DAL\obj\Release\CarFleet.DAL.csprojResolveAssemblyReference.cache
+C:\WORKSPACES\CarFleet\CarFleet.DAL\obj\Release\CarFleet.DAL.dll
+C:\WORKSPACES\CarFleet\CarFleet.DAL\obj\Release\CarFleet.DAL.pdb
