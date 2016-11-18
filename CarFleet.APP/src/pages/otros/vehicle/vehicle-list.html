@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Lista de vehiculos</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar (ionInput)="searchVehicle($event)"></ion-searchbar>
+    <ion-list>
+        <ion-item *ngFor="let vehicle of vehicleList" (click)="viewVehicle(vehicle)">
+            <ion-avatar item-left>
+                <img src="assets/img/vehicleListIcon.png">
+            </ion-avatar>
+            Name:
+            <h2 [innerHTML]="vehicle.Name"></h2>
+            Model:
+            <h3 [innerHTML]="vehicle.Model"></h3>
+            Year:
+            <p [innerHTML]="vehicle.Year"></p>
+        </ion-item>
+    </ion-list>
+</ion-content>

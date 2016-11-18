@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Mi compañia</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+
+
+    <ion-list>
+        <ion-item (click)="goListDrivers()">
+            <ion-thumbnail item-left>
+                <img src="assets/img/driver_icon.png">
+            </ion-thumbnail>
+            <h2>Listado de conductores</h2>
+        </ion-item>
+        <ion-item (click)="goListVehicles()">
+            <ion-thumbnail item-left>
+                <img src="assets/img/vehicle_icon.png">
+            </ion-thumbnail>
+            <h2>Listado de vehiculos</h2>
+        </ion-item>
+        <ion-item (click)="goListFleets()">
+            <ion-thumbnail item-left>
+                <img src="assets/img/fleet_icon.png">
+            </ion-thumbnail>
+            <h2>Listado de flotas</h2>
+        </ion-item>
+        <ion-item (click)="goListMaintenance()">
+            <ion-thumbnail item-left>
+                <img src="assets/img/maintenance_icon.png">
+            </ion-thumbnail>
+            <h2>Opciones de mantenimiento</h2>
+        </ion-item>
+    </ion-list>
+</ion-content>

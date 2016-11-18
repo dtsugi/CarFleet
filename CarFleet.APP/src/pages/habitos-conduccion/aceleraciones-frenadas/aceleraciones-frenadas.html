@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Aceleraciones y frenadas</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label>Seleccione vehiculo</ion-label>
+        <ion-select [(ngModel)]="vehicleSelected">
+            <ion-option *ngFor="let vehicle of vehicleList" [value]="vehicle">{{vehicle.Name}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <br>
+    <div *ngIf="vehicleSelected" style="text-align:center">
+        <h2>Vehicle:{{vehicleSelected.Name}} - Model:{{vehicleSelected.Model}}</h2>
+        <button ion-button full onclick="GenerateAceleracionesFrenadas('divGenerateAceleracionesFrenadas')">Generar grafico</button>
+    </div>
+    <br>
+    <canvas id="divGenerateAceleracionesFrenadas" width="100%" height="100%"></canvas>
+</ion-content>

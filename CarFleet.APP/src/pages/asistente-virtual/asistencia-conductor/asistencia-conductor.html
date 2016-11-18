@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Home asistencia al conductor</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item (click)="tappedMenu(0)">
+            <ion-thumbnail item-left>
+                <img src="assets/img/AsistenciaConductor_I.png">
+            </ion-thumbnail>
+            <h2>Primeros auxilios</h2>
+        </ion-item>
+        <ion-item (click)="tappedMenu(1)">
+            <ion-thumbnail item-left>
+                <img src="assets/img/AsistenciaConductor_II.png">
+            </ion-thumbnail>
+            <h2>Actuación en caso de accidente</h2>
+        </ion-item>
+        <ion-item>
+            <ion-thumbnail item-left>
+                <img src="assets/img/AsistenciaConductor_III.png">
+            </ion-thumbnail>
+            <h2>Cambio de neumático pinchado</h2>
+        </ion-item>
+    </ion-list>
+</ion-content>

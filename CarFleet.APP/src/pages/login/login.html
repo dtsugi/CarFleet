@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <!--<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>-->
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label floating>Nombre de usuario</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label>Company</ion-label>
+    <ion-select [(ngModel)]="companySelected">
+      <ion-option *ngFor="let company of companyList" [value]="company.Id">{{company.Name}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <br>
+  <button ion-button full (click)="login()">Login</button>
+  <br>
+  <p style="color:red;text-align:center">Recuerde que si selecciona alguna compañia algunos resultados de las vistas se pueden ver afectados</p>
+</ion-content>
