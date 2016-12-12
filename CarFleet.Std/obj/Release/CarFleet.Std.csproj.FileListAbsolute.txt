@@ -1,7 +1,0 @@
-C:\WORKSPACES\CarFleet\CarFleet.Std\bin\Release\CarFleet.Std.dll
-C:\WORKSPACES\CarFleet\CarFleet.Std\bin\Release\CarFleet.Std.pdb
-C:\WORKSPACES\CarFleet\CarFleet.Std\bin\Release\CarFleet.Utils.dll
-C:\WORKSPACES\CarFleet\CarFleet.Std\bin\Release\CarFleet.Utils.pdb
-C:\WORKSPACES\CarFleet\CarFleet.Std\obj\Release\CarFleet.Std.csprojResolveAssemblyReference.cache
-C:\WORKSPACES\CarFleet\CarFleet.Std\obj\Release\CarFleet.Std.dll
-C:\WORKSPACES\CarFleet\CarFleet.Std\obj\Release\CarFleet.Std.pdb

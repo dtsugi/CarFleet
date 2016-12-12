@@ -1,4 +1,0 @@
-C:\WORKSPACES\CarFleet\CarFleet.Utils\bin\Release\CarFleet.Utils.dll
-C:\WORKSPACES\CarFleet\CarFleet.Utils\bin\Release\CarFleet.Utils.pdb
-C:\WORKSPACES\CarFleet\CarFleet.Utils\obj\Release\CarFleet.Utils.dll
-C:\WORKSPACES\CarFleet\CarFleet.Utils\obj\Release\CarFleet.Utils.pdb
