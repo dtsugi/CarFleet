@@ -15,10 +15,13 @@ function Init() {
 function LoadDivAttributes(fields) {
     var text = "";
     for (i = 0; i < fields.length; i++) {
-        if (IsNumericType(fields[i].DATA_TYPE))
+        if (IsNumericType(fields[i].DATA_TYPE)){
             text += "public int ";
-        else if (IsVarcharType(fields[i].DATA_TYPE))
+        }else if (IsVarcharType(fields[i].DATA_TYPE)){
             text += "public string ";
+        }else if (IsDatetimeType(fields[i].DATA_TYPE)){
+            text += "public DateTime ";
+        }
 
         text += fields[i].ENTITY_NAME + " {get; set;} <br>";
     }

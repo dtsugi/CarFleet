@@ -43,3 +43,10 @@ function IsVarcharType(columnType) {
     else
         return false;
 }
+
+function IsDatetimeType(columnType) {
+    if (columnType.includes("date") || columnType.includes("datetime"))
+        return true;
+    else
+        return false;
+}
