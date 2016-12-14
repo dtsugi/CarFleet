@@ -8,24 +8,28 @@
 </ion-header>
 
 <ion-content>
+  <ion-row>
+    <img src="assets/img/movildat-logo.png" />
+  </ion-row>
   <ion-item>
     <ion-label floating>Nombre de usuario</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="username"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Password</ion-label>
-    <ion-input type="password"></ion-input>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
   <br>
+  <button ion-button full (click)="login()">Inicio de sesion</button>
   <ion-item>
-    <ion-label>Company</ion-label>
-    <ion-select [(ngModel)]="companySelected">
-      <ion-option *ngFor="let company of companyList" [value]="company.Id">{{company.Name}}</ion-option>
-    </ion-select>
+    <ion-label>Mantener sesion abierta</ion-label>
+    <ion-checkbox color="primary" checked="false"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Recordar mi clave y usuario</ion-label>
+    <ion-checkbox color="primary" checked="false"></ion-checkbox>
   </ion-item>
   <br>
-  <button ion-button full (click)="login()">Login</button>
-  <br>
-  <p style="color:red;text-align:center">Recuerde que si selecciona alguna compañia algunos resultados de las vistas se pueden ver afectados</p>
+
 </ion-content>

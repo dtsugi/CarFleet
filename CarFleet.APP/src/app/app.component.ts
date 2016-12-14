@@ -5,7 +5,7 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
 import { PageMenu } from '../models/PageMenu';
-
+import './rxjs-operators';
 // Pages 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
@@ -13,6 +13,7 @@ import { LoginPage } from '../pages/login/login';
 import { AsistenteVirtualHomePage } from '../pages/asistente-virtual/asistente-virtual-home';
 import { HabitosConduccionHomePage } from '../pages/habitos-conduccion/habitos-conduccion-home';
 import { OtrosHomePage } from '../pages/otros/otros-home';
+import { ConfigHomePage } from '../pages/config/config-home';
 
 
 @Component({
@@ -25,11 +26,13 @@ export class MyApp {
   // rootPage: any = LoginPage;
   rootPage: any = LoginPage;
   pages: Array<PageMenu>;
+  tagsList = [];
 
   constructor(
     public platform: Platform,
     public menu: MenuController
   ) {
+    console.log("INIT MENU");
     this.initializeApp();
     this.pages = [];
     // set our app's pages
@@ -41,6 +44,7 @@ export class MyApp {
     this.pages.push(new PageMenu('Gestion de la documentacion', null, 'document'));
     this.pages.push(new PageMenu('Multas', null, 'card'));
     this.pages.push(new PageMenu('Panel de conduccion en tiempo real', null, 'speedometer'));
+    this.pages.push(new PageMenu('Configuracion', ConfigHomePage, 'more'));
     this.pages.push(new PageMenu('Cerrar sesion', LoginPage, 'log-out'));
     // this.pages.push(new PageMenu('Otros', OtrosHomePage, 'more'));
   }

@@ -3,36 +3,36 @@
         <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-        <ion-title>Mi compañia</ion-title>
+        <ion-title>{{lblOtTitlePage.Value}}</ion-title>
     </ion-navbar>
 </ion-header>
 <ion-content>
 
 
     <ion-list>
-        <ion-item (click)="goListDrivers()">
+        <ion-item (click)="goListFleets()">
             <ion-thumbnail item-left>
-                <img src="assets/img/driver_icon.png">
+                <img src="assets/img/fleet_icon.png" width="50" height="30">
             </ion-thumbnail>
-            <h2>Listado de conductores</h2>
+            <h2>{{lblOtItemFlotas.Value}}</h2>
         </ion-item>
         <ion-item (click)="goListVehicles()">
             <ion-thumbnail item-left>
-                <img src="assets/img/vehicle_icon.png">
+                <img src="assets/img/vehicle_icon.png" width="50" height="30">
             </ion-thumbnail>
-            <h2>Listado de vehiculos</h2>
+            <h2>{{lblOtItemVehiculos.Value}}</h2>
         </ion-item>
-        <ion-item (click)="goListFleets()">
+        <ion-item (click)="goListDrivers()">
             <ion-thumbnail item-left>
-                <img src="assets/img/fleet_icon.png">
+                <img src="assets/img/driver_icon.png" width="50" height="30">
             </ion-thumbnail>
-            <h2>Listado de flotas</h2>
+            <h2>{{lblOtItemConductores.Value}}</h2>
         </ion-item>
         <ion-item (click)="goListMaintenance()">
             <ion-thumbnail item-left>
-                <img src="assets/img/maintenance_icon.png">
+                <img src="assets/img/maintenance_icon.png" width="50" height="30">
             </ion-thumbnail>
-            <h2>Opciones de mantenimiento</h2>
+            <h2>{{lblOtItemOpcMantenimiento.Value}}</h2>
         </ion-item>
     </ion-list>
 </ion-content>

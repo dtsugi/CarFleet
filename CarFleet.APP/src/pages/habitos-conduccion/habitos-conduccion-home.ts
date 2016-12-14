@@ -37,7 +37,7 @@ export class HabitosConduccionHomePage {
     //     console.log(list);
     //     this.driverList = list;
     //   })
-    this.driverList = this._driverService.get(null, null);
+    // this.driverList = this._driverService.get(null, null);
     console.log(this.driverList);
   }
 }

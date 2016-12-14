@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { AppConfig } from '../app/app.config';
 import { Utils } from '../app/utils';
-import { COMPANY_LIST } from '../mocks/company.mock';
+// import { COMPANY_LIST } from '../mocks/company.mock';
+import { Company } from '../models/Company';
 
 @Injectable()
 export class CompanyService {
@@ -19,9 +20,9 @@ export class CompanyService {
         id_drivingrulesconfiguration = Utils.IsValidApiParameter(id_drivingrulesconfiguration);
         id_platform_service = Utils.IsValidApiParameter(id_platform_service);
         this.url = Utils.SetUrlApiGet(this.actionUrl, [id, id_companytype, id_drivingrulesconfiguration, id_platform_service]);
-        console.log("URL" + this.url);
-        // return this._http.get(this.url)
-        //     .map(response => response.json());
-        return COMPANY_LIST;
+        console.log("URL:" + this.url);        
+        return this._http.get(this.url)
+            .map((response: Response) => response.json());            
+        // return COMPANY_LIST;
     }
 }

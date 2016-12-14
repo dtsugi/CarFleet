@@ -1,40 +1,41 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
-import { DriverService } from '../../../services/driver.service';
-import { DriverViewPage } from './driver-view';
+import { VehicleService } from '../../../services/vehicle.service';
+import { VehicleViewPage } from '../vehicle/vehicle-view';
 import { Utils, ConstantsConfig, Enum } from '../../../app/utils';
 
 @Component({
-    templateUrl: 'driver-list.html',
-    providers: [DriverService]
+    templateUrl: 'fleet-vehicle-list.html',
+    providers: [VehicleService]
 })
 
-export class DriverListPage {
-
-    driverList = [];
+export class FleetVehicleListPage {
+    fleetSelected;
+    vehicleList = [];
 
     constructor(public navCtrl: NavController,
         public navParams: NavParams,
         public toastCtrl: ToastController,
-        private _driverService: DriverService) {
+        private _vehicleService: VehicleService) {
     }
 
     ngOnInit() {
-        this.initDriverList();
+        this.fleetSelected = this.navParams.get("fleetSelected");
+        this.initVehicleList();
     }
 
-    viewDriver(driver) {
-        this.navCtrl.push(DriverViewPage, { driverSelected: driver });
+    viewVehicle(vehicle) {
+        console.log(vehicle);
+        this.navCtrl.push(VehicleViewPage, { vehicleSelected: vehicle });
     }
 
-    initDriverList() {
-        var idCompany = localStorage.getItem(ConstantsConfig.USER_COMPANY_ID_LS);
-        this._driverService.getByCompanyId(idCompany)
+    initVehicleList() {
+        this._vehicleService.getByFleetId(this.fleetSelected.Id)
             .subscribe(
             res => {
                 console.log(res);
                 if (Utils.IsArrayNotEmpty(res))
-                    this.driverList = res;
+                    this.vehicleList = res;
                 else
                     Utils.ShowToast(this.toastCtrl, Enum.TOAST_POSITION.bottom, ConstantsConfig.RES_SIN_REGISTROS, 3000);
             },
@@ -44,11 +45,11 @@ export class DriverListPage {
             });
     }
 
-    searchDriver(ev: any) {
-        this.initDriverList();
+    searchVehicle(ev: any) {
+        this.initVehicleList();
         let val = ev.target.value;
         if (val && val.trim() != '') {
-            this.driverList = this.driverList.filter((item) => {
+            this.vehicleList = this.vehicleList.filter((item) => {
                 return (item.Name.toLowerCase().indexOf(val.toLowerCase()) > -1);
             })
         }

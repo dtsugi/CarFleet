@@ -23,8 +23,16 @@ import { DriverViewPage } from '../pages/otros/driver/driver-view';
 import { VehicleListPage } from '../pages/otros/vehicle/vehicle-list';
 import { VehicleViewPage } from '../pages/otros/vehicle/vehicle-view';
 import { FleetListPage } from '../pages/otros/fleet/fleet-list';
+import { FleetVehicleListPage } from '../pages/otros/fleet/fleet-vehicle-list';
 import { MaintenanceListPage } from '../pages/otros/maintenance/maintenance-list';
 
+import { ConfigHomePage } from '../pages/config/config-home';
+import { IdiomaListPage } from '../pages/config/idioma/idioma-list';
+import { TagListPage } from '../pages/config/tags/tags-list';
+import { TagInsertPage } from '../pages/config/tags/tags-insert';
+import { TagsLanguageListPage } from '../pages/config/tags-language/tags-language-list';
+import { TagsLanguageViewPage } from '../pages/config/tags-language/tags-language-view';
+import { TagsLanguageEditPage } from '../pages/config/tags-language/tags-language-edit';
 
 @NgModule({
   declarations: [
@@ -47,7 +55,15 @@ import { MaintenanceListPage } from '../pages/otros/maintenance/maintenance-list
     VehicleListPage,
     VehicleViewPage,
     FleetListPage,
-    MaintenanceListPage
+    FleetVehicleListPage,
+    MaintenanceListPage,
+    ConfigHomePage,
+    IdiomaListPage,
+    TagListPage,
+    TagInsertPage,
+    TagsLanguageListPage,
+    TagsLanguageViewPage,
+    TagsLanguageEditPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -73,7 +89,15 @@ import { MaintenanceListPage } from '../pages/otros/maintenance/maintenance-list
     VehicleListPage,
     VehicleViewPage,
     FleetListPage,
-    MaintenanceListPage
+    FleetVehicleListPage,
+    MaintenanceListPage,
+    ConfigHomePage,
+    IdiomaListPage,
+    TagListPage,
+    TagInsertPage,
+    TagsLanguageListPage,
+    TagsLanguageViewPage,
+    TagsLanguageEditPage
   ],
   providers: []
 })

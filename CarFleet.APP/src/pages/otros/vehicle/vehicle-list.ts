@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { VehicleService } from '../../../services/vehicle.service';
 import { VehicleViewPage } from './vehicle-view';
-import { COMPANY_ID_LS } from '../../../app/utils';
+import { Utils, ConstantsConfig, Enum } from '../../../app/utils';
 
 @Component({
     templateUrl: 'vehicle-list.html',
@@ -13,7 +13,10 @@ export class VehicleListPage {
 
     vehicleList = [];
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, private _vehicleService: VehicleService) {
+    constructor(public navCtrl: NavController,
+        public navParams: NavParams,
+        public toastCtrl: ToastController,
+        private _vehicleService: VehicleService) {
     }
 
     ngOnInit() {
@@ -26,8 +29,20 @@ export class VehicleListPage {
     }
 
     initVehicleList() {
-        var companyId = localStorage.getItem(COMPANY_ID_LS);        
-        this.vehicleList = this._vehicleService.get(null, companyId, null, null, null);
+        var idCompany = localStorage.getItem(ConstantsConfig.USER_COMPANY_ID_LS);
+        this._vehicleService.getByCompanyId(idCompany)
+            .subscribe(
+            res => {
+                console.log(res);
+                if (Utils.IsArrayNotEmpty(res))
+                    this.vehicleList = res;
+                else
+                    Utils.ShowToast(this.toastCtrl, Enum.TOAST_POSITION.bottom, ConstantsConfig.RES_SIN_REGISTROS, 3000);
+            },
+            error => {
+                console.log(error);
+                Utils.ShowToast(this.toastCtrl, Enum.TOAST_POSITION.bottom, ConstantsConfig.ERR_GNR_APP, 3000);
+            });
     }
 
     searchVehicle(ev: any) {
