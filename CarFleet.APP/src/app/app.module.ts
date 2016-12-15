@@ -8,14 +8,26 @@ import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+
 import { AsistenteVirtualHomePage } from '../pages/asistente-virtual/asistente-virtual-home';
+
+import { PrimerosAuxiliosHomePage } from '../pages/asistente-virtual/primeros-auxilios/primeros-auxilios-home';
+import { DocumentacionHomePage } from '../pages/asistente-virtual/primeros-auxilios/documentacion-home';
+import { EnlacesHomePage } from '../pages/asistente-virtual/primeros-auxilios/enlaces-home';
+
+import { PinchazoNeumaticoHomePage } from '../pages/asistente-virtual/pinchazo-neumatico/pinchazo-neumatico-home';
+import { DocumentacionPinchazoHomePage } from '../pages/asistente-virtual/pinchazo-neumatico/documentacion-home';
+import { EnlacesPinchazoHomePage } from '../pages/asistente-virtual/pinchazo-neumatico/enlaces-home';
+
 import { AsistenciaConductorPage } from '../pages/asistente-virtual/asistencia-conductor/asistencia-conductor';
 import { SlidesAsistenciaPage } from '../pages/asistente-virtual/asistencia-conductor/slides-asistencia/slides-asistencia';
+
 
 import { HabitosConduccionHomePage } from '../pages/habitos-conduccion/habitos-conduccion-home';
 import { CalculosConsumosPage } from '../pages/habitos-conduccion/calculos-consumos/calculos-consumos';
 import { LugaresFrecuentadosPage } from '../pages/habitos-conduccion/lugares-frecuentados/lugares-frecuentados';
 import { AceleracionesFrenadasPage } from '../pages/habitos-conduccion/aceleraciones-frenadas/aceleraciones-frenadas';
+
 
 import { OtrosHomePage } from '../pages/otros/otros-home';
 import { DriverListPage } from '../pages/otros/driver/driver-list';
@@ -25,6 +37,7 @@ import { VehicleViewPage } from '../pages/otros/vehicle/vehicle-view';
 import { FleetListPage } from '../pages/otros/fleet/fleet-list';
 import { FleetVehicleListPage } from '../pages/otros/fleet/fleet-vehicle-list';
 import { MaintenanceListPage } from '../pages/otros/maintenance/maintenance-list';
+
 
 import { ConfigHomePage } from '../pages/config/config-home';
 import { IdiomaListPage } from '../pages/config/idioma/idioma-list';
@@ -43,6 +56,12 @@ import { TagsLanguageEditPage } from '../pages/config/tags-language/tags-languag
     HomePage,
     LoginPage,
     AsistenteVirtualHomePage,
+    PrimerosAuxiliosHomePage,
+    DocumentacionHomePage,
+    EnlacesHomePage,
+    PinchazoNeumaticoHomePage,
+    DocumentacionPinchazoHomePage,
+    EnlacesPinchazoHomePage,
     AsistenciaConductorPage,
     SlidesAsistenciaPage,
     HabitosConduccionHomePage,
@@ -77,6 +96,12 @@ import { TagsLanguageEditPage } from '../pages/config/tags-language/tags-languag
     HomePage,
     LoginPage,
     AsistenteVirtualHomePage,
+    PrimerosAuxiliosHomePage,
+    DocumentacionHomePage,
+    EnlacesHomePage,
+    PinchazoNeumaticoHomePage,
+    DocumentacionPinchazoHomePage,
+    EnlacesPinchazoHomePage,
     AsistenciaConductorPage,
     SlidesAsistenciaPage,
     HabitosConduccionHomePage,
