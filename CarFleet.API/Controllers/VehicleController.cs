@@ -1,6 +1,8 @@
-﻿using System.Web.Http;
-using CarFleet.BLL;
-
+﻿using CarFleet.BLL;
+using System;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 
 namespace CarFleet.API.Controllers
 {
@@ -8,10 +10,30 @@ namespace CarFleet.API.Controllers
     {
         private VehicleLogic _VehicleLogic = new VehicleLogic();
 
-        [HttpGet, Route("api/Vehicle/Get/{id}/{idCompany}/{idFleet}/{idVehicleType}/{idDriver}")]
-        public IHttpActionResult Get(int? id, int? idCompany, int? idFleet, int? idVehicleType, int? idDriver)
+        [HttpGet, Route("api/Vehicle/GetByCompanyId/{idCompany}")]
+        public IHttpActionResult GetByCompanyId(int idCompany)
         {
-            return Ok(_VehicleLogic.Get(id, idCompany, idFleet, idVehicleType, idDriver));
+            try
+            {
+                return Ok(_VehicleLogic.GetByCompanyId(idCompany));
+            }
+            catch (Exception)
+            {
+                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "No fue posible obtener el listado de vehiculos por el id de la compañia"));
+            }
+        }
+
+        [HttpGet, Route("api/Vehicle/GetByFleetId/{idFleet}")]
+        public IHttpActionResult GetByFleetId(int idFleet)
+        {
+            try
+            {
+                return Ok(_VehicleLogic.GetByFleetId(idFleet));
+            }
+            catch (Exception)
+            {
+                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "No fue posible obtener el listado de vehiculos por el id de la flota"));
+            }
         }
     }
 }

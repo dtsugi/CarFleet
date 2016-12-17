@@ -52,6 +52,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CarFleet.BLL\CarFleet.BLL.csproj">
+      <Project>{fd97f5e2-d923-44dc-8246-98a7efd4b717}</Project>
+      <Name>CarFleet.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CarFleet.DAL\CarFleet.DAL.csproj">
       <Project>{79193bae-f99e-4d7c-8934-f0a3c544d737}</Project>
       <Name>CarFleet.DAL</Name>

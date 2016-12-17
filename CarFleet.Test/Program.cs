@@ -1,4 +1,5 @@
-﻿using CarFleet.DAL;
+﻿using CarFleet.BLL;
+using CarFleet.DAL;
 using CarFleet.Models;
 using System;
 using System.Collections.Generic;
@@ -12,15 +13,28 @@ namespace CarFleet.Test
     {
         static void Main(string[] args)
         {
-            //DriverCrud driverCrud = new DriverCrud();
-            //DriverEntity driver = driverCrud.SelectById(1);
-            //var p = driver;
-
-            //CompanyCrud companyCrud = new CompanyCrud();
-            //CompanyEntity companyEntity = companyCrud.SelectById(87);
-            //List<CompanyEntity> companyEntity = companyCrud.Select(null, 1, null, null);
-            //var f = companyEntity;
+            LanguageLogic languageLogic = new LanguageLogic();
+            UserLogic userLogic = new UserLogic();
+            UserFleetLogic userFleetLogic = new UserFleetLogic();
+            FleetLogic fleetLogic = new FleetLogic();
+            VehicleLogic vehicleLogic = new VehicleLogic();
+            DriverLogic driverLogic = new DriverLogic();
+            ConfigTagLogic configTagLogic = new ConfigTagLogic();
+            ConfigTagLanguageCrud configTagLanguageCrud = new ConfigTagLanguageCrud();
+            
+            //List<LanguageEntity> listLanguage = languageLogic.SelectAll();
+            //LanguageEntity languageEntity = languageLogic.GetById(1);
+            //UserEntity userEntity = userLogic.Login("ManuelM");
+            //List<UserFleetEntity> listuserFleet = userFleetLogic.SelectByUserId(userEntity.Id);
+            //List<FleetEntity> listFleet = fleetLogic.GetByCompanyId(userEntity.Id_company);
+            //List<VehicleEntity> listVehicle = vehicleLogic.GetByCompanyId(userEntity.Id_company);
+            //List<VehicleEntity> listVehicle2 = vehicleLogic.GetByFleetId(listFleet.FirstOrDefault().Id);
+            //List<DriverEntity> listDriver = driverLogic.GetByCompanyId(userEntity.Id_company);
+            ConfigTagEntity configTagEntity=new ConfigTagEntity();
+            configTagEntity.Tag_key = "lblUser";
+            configTagEntity.Page_name = "Login";
+            configTagLogic.Insert(configTagEntity);
+            var f = 234;
         }
-
     }
 }

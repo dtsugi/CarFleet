@@ -12,7 +12,7 @@ function Connect(isNew) {
             user: GetValueElement("txtUser"),
             password: GetValueElement("txtPassword"),
             database: GetValueElement("txtDatabase"),
-            options: { encrypt: true }
+            options: { encrypt: false }
         };
         data = JSON.stringify(connection);
         _SetLocalStorage(_connectionObject, data);

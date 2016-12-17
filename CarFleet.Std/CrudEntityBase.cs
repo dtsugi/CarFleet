@@ -21,7 +21,7 @@ namespace CarFleet.Std
 
         protected IEnumerable<T> ToList(IDbCommand command, bool isFKCall = false)
         {
-            using (var reader = command.ExecuteReader(CommandBehavior.CloseConnection))
+            using (var reader = command.ExecuteReader(CommandBehavior.Default))
             {
                 List<T> items = new List<T>();
                 while (reader.Read())
@@ -45,9 +45,17 @@ namespace CarFleet.Std
             }
         }
 
-        protected bool HasValueRecord(object recordObject)
+        protected bool HasValueRecord(IDataRecord record, string columnName)
         {
-            return (recordObject != DBNull.Value);
+            try
+            {
+                int index = record.GetOrdinal(columnName);
+                return (index >= 0 && record[index] != DBNull.Value);
+            }
+            catch (IndexOutOfRangeException)
+            {
+                return false;
+            }
         }
 
         protected object GetValueRecord(object recordObject, Utils.Constants.DATA_TYPES returnDataType)
@@ -81,9 +89,21 @@ namespace CarFleet.Std
                             Utils.Log.LoggerBase._Log(string.Format("The recordObject {0} is not a valid INT", recordObject.ToString()), this.GetType());
                         }
                         break;
+                    case Utils.Constants.DATA_TYPES.BIGINT:
+                        if (!Utils.Utilities._IsCasteable(recordObject.ToString(), out returnObject, Utils.Constants.DATA_TYPES.BIGINT))
+                        {
+                            Utils.Log.LoggerBase._Log(string.Format("The recordObject {0} is not a valid BIGINT", recordObject.ToString()), this.GetType());
+                        }
+                        break;
                     case Utils.Constants.DATA_TYPES.VARCHAR:
                     case Utils.Constants.DATA_TYPES.NVARCHAR:
                         returnObject = recordObject.ToString();
+                        break;
+                    case Utils.Constants.DATA_TYPES.BIT:
+                        if (!Utils.Utilities._IsCasteable(recordObject.ToString(), out returnObject, Utils.Constants.DATA_TYPES.BIT))
+                        {
+                            Utils.Log.LoggerBase._Log(string.Format("The recordObject {0} is not a valid BIT", recordObject.ToString()), this.GetType());
+                        }
                         break;
                 }
                 return recordObject;

@@ -8,10 +8,10 @@ namespace CarFleet.API.Controllers
     {
         private CompanyTypeLogic _CompanyTypeLogic = new CompanyTypeLogic();
 
-        [HttpGet, Route("api/CompanyType/GetById/{id}")]
-        public IHttpActionResult GetById(int? id)
-        {
-            return Ok(_CompanyTypeLogic.GetById(id));
-        }
+        //[HttpGet, Route("api/CompanyType/GetById/{id}")]
+        //public IHttpActionResult GetById(int? id)
+        //{
+        //    return Ok(_CompanyTypeLogic.GetById(id));
+        //}
     }
 }

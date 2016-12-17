@@ -8,10 +8,10 @@ namespace CarFleet.API.Controllers
     {
         private MaintenanceOperationCompanyLogic _MaintenanceOperationCompanyLogic = new MaintenanceOperationCompanyLogic();
 
-        [HttpGet, Route("api/MaintenanceOperationCompany/Get/{id}/{idCompany}/{idMaintenanceOperation}")]
-        public IHttpActionResult Get(int? id, int? idCompany, int? idMaintenanceOperation)
-        {
-            return Ok(_MaintenanceOperationCompanyLogic.GetById(id, idCompany, idMaintenanceOperation));
-        }
+        //[HttpGet, Route("api/MaintenanceOperationCompany/Get/{id}/{idCompany}/{idMaintenanceOperation}")]
+        //public IHttpActionResult Get(int? id, int? idCompany, int? idMaintenanceOperation)
+        //{
+        //    return Ok(_MaintenanceOperationCompanyLogic.GetById(id, idCompany, idMaintenanceOperation));
+        //}
     }
 }

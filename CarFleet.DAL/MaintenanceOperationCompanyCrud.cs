@@ -13,9 +13,9 @@ namespace CarFleet.DAL
         public override void Map(IDataRecord record, MaintenanceOperationCompanyEntity entity)
         {
 
-            entity.Id = (int)base.GetValueRecord(record["id"], Utils.Constants.DATA_TYPES.INT);
-            if (base.HasValueRecord(record["id_company"])) { entity.Id_company = (int)base.GetValueRecord(record["id_company"], Utils.Constants.DATA_TYPES.INT); }
-            if (base.HasValueRecord(record["id_maintenanceoperation"])) { entity.Id_maintenanceoperation = (int)base.GetValueRecord(record["id_maintenanceoperation"], Utils.Constants.DATA_TYPES.INT); }
+            //entity.Id = (int)base.GetValueRecord(record["id"], Utils.Constants.DATA_TYPES.INT);
+            //if (base.HasValueRecord(record["id_company"])) { entity.Id_company = (int)base.GetValueRecord(record["id_company"], Utils.Constants.DATA_TYPES.INT); }
+            //if (base.HasValueRecord(record["id_maintenanceoperation"])) { entity.Id_maintenanceoperation = (int)base.GetValueRecord(record["id_maintenanceoperation"], Utils.Constants.DATA_TYPES.INT); }
 
         }
 

@@ -12,7 +12,7 @@ namespace CarFleet.API
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
-
+            //var cors = new EnableCorsAttribute("*", "*", "*");            
             // Web API routes
             config.MapHttpAttributeRoutes();
 
@@ -22,6 +22,10 @@ namespace CarFleet.API
                 defaults: new { id = RouteParameter.Optional }
             );
             config.MessageHandlers.Add(new RequestMethodHandler());
+            var json = config.Formatters.JsonFormatter;
+            json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
+            //config.EnableCors();
         }
     }
 }

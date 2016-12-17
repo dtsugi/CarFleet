@@ -4,7 +4,6 @@ namespace CarFleet.Utils
 {
     public class Utilities
     {
-
         public static bool _IsCasteable(string objectIn, out object resultOut, Utils.Constants.DATA_TYPES returnDataType)
         {
             bool isCasteable = false;
@@ -13,6 +12,12 @@ namespace CarFleet.Utils
                 int intOut = 0;
                 isCasteable = int.TryParse(objectIn, out intOut);
                 resultOut = intOut;
+            }
+            else if (returnDataType == Constants.DATA_TYPES.BIGINT)
+            {
+                Int32 bigintOut = 0;
+                isCasteable = Int32.TryParse(objectIn, out bigintOut);
+                resultOut = bigintOut;
             }
             else if (returnDataType == Constants.DATA_TYPES.DOUBLE)
             {
@@ -31,6 +36,12 @@ namespace CarFleet.Utils
                 DateTime dateTimeOut;
                 isCasteable = DateTime.TryParse(objectIn, out dateTimeOut);
                 resultOut = dateTimeOut;
+            }
+            else if (returnDataType == Constants.DATA_TYPES.BIT)
+            {
+                bool boolOut;
+                isCasteable = Boolean.TryParse(objectIn, out boolOut);
+                resultOut = boolOut;
             }
             else
             {

@@ -38,6 +38,7 @@
   <ItemGroup>
     <Compile Include="Config\ConfigManager.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Database\StoreProcedureConstants.cs" />
     <Compile Include="Log\LoggerBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities.cs" />

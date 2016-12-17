@@ -14,13 +14,9 @@ function Init() {
 function LoadDivParametersMap(fields) {
     var text = "";
     for (i = 0; i < fields.length; i++) {
-        if (fields[i].IS_NULLABLE == "YES") {
-            text += "if (base.HasValueRecord(record[\"" + fields[i].COLUMN_NAME + "\"])) { ";
-            text = ValidateDataType(fields[i], text);
-            text += "}";
-        } else {
-            text = ValidateDataType(fields[i], text);
-        }
+        text += "if (base.HasValueRecord(record, \"" + fields[i].COLUMN_NAME + "\")) {";
+        text = ValidateDataType(fields[i], text);
+        text += "}";
         text += "<br>";
     }
     return text;

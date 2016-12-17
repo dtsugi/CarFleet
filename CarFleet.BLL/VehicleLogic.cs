@@ -8,9 +8,14 @@ namespace CarFleet.BLL
     {
         private VehicleCrud _VehicleCrud = new VehicleCrud();
 
-        public List<VehicleEntity> Get(int? id, int? idCompany, int? idFleet, int? idVehicleType, int? idDriver)
+        public List<VehicleEntity> GetByCompanyId(int idCompany)
         {
-            return _VehicleCrud.Select(id, idCompany, idFleet, idVehicleType, idDriver);
+            return _VehicleCrud.SelectByCompanyId(idCompany);
+        }
+
+        public List<VehicleEntity> GetByFleetId(int idFleet)
+        {
+            return _VehicleCrud.SelectByFleetId(idFleet);
         }
     }
 }

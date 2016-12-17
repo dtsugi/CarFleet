@@ -10,8 +10,8 @@ namespace CarFleet.DAL
     {
         public override void Map(IDataRecord record, CompanyTypeEntity entity)
         {
-            entity.Id = (int)base.GetValueRecord(record["id"], Utils.Constants.DATA_TYPES.INT);
-            if (base.HasValueRecord(record["company_category"])) { entity.Company_category = (string)base.GetValueRecord(record["company_category"], Utils.Constants.DATA_TYPES.NVARCHAR); }
+            //entity.Id = (int)base.GetValueRecord(record["id"], Utils.Constants.DATA_TYPES.INT);
+            //if (base.HasValueRecord(record["company_category"])) { entity.Company_category = (string)base.GetValueRecord(record["company_category"], Utils.Constants.DATA_TYPES.NVARCHAR); }
         }
 
         public List<CompanyTypeEntity> Select(int? id)
