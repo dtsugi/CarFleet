@@ -8,8 +8,8 @@ import { ConfigTagService } from '../../../services/configTag.service';
 })
 
 export class TagInsertPage {
-    // configTag = { Id: 0, Tag_key: "", Page_name: "" };
-    configTag = {};
+    configTag = { Id: 0, Tag_key: "", Page_name: "" };
+    //configTag = {};
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private _configTagService: ConfigTagService) {
     }
