@@ -4,7 +4,6 @@ import { MyApp } from './app.component';
 
 // Pages
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
@@ -51,7 +50,6 @@ import { TagsLanguageEditPage } from '../pages/config/tags-language/tags-languag
   declarations: [
     MyApp,
     HelloIonicPage,
-    ItemDetailsPage,
     ListPage,
     HomePage,
     LoginPage,
@@ -91,7 +89,6 @@ import { TagsLanguageEditPage } from '../pages/config/tags-language/tags-languag
   entryComponents: [
     MyApp,
     HelloIonicPage,
-    ItemDetailsPage,
     ListPage,
     HomePage,
     LoginPage,

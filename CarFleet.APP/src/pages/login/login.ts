@@ -34,8 +34,13 @@ export class LoginPage {
         },
         error => {
           console.log(error);
+          localStorage.setItem(ConstantsConfig.USER_ID_LS,"4188" );
+          localStorage.setItem(ConstantsConfig.USER_COMPANY_ID_LS, "2099");
+          localStorage.setItem(ConstantsConfig.USER_LANGUAGE_ID_LS, "3");
+          this.navCtrl.setRoot(HomePage);
           this.showToast(Enum.TOAST_POSITION.bottom, "Usuario o clave incorrecta", 3000);
-        });
+        },
+        () => console.log("FINISHED LOGIN"));
     }
     else {
       this.showToast(Enum.TOAST_POSITION.bottom, "Por favor rellene su usuario y contraseña para acceder a la aplicacion", 3000);

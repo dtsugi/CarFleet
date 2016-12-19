@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { AppConfig } from '../app/app.config';
 import { Utils } from '../app/utils';
-// import { FLEET_LIST } from '../mocks/fleet.mock';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
@@ -48,5 +47,12 @@ export class FleetService {
         console.log("URL" + this.url);
         return this._http.get(this.url)
             .map(response => response.json());
-    }    
+    }
+
+    getTotalByCompanyId(idCompany) {
+        this.url = Utils.SetUrlApiGet(this.actionUrl + "GetTotalByCompanyId/", [idCompany]);
+        console.log("URL" + this.url);
+        return this._http.get(this.url)
+            .map(response => response.json());
+    }
 }
