@@ -7,5 +7,7 @@
         public enum DATA_TYPES { BIGINT, INT, DOUBLE, FLOAT, DECIMAL, VARCHAR, NVARCHAR, DATETIME, BIT };
 
         public enum CRUD_OPERATION { INSERT, UPDATE, SELECT, DELETE };
+
+        public enum CARFLEET_ENTITY { FLEET, DRIVER, VEHICLE };
     }
 }

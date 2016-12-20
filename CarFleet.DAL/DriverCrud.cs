@@ -30,7 +30,7 @@ namespace CarFleet.DAL
                 command.CommandType = CommandType.StoredProcedure;
                 return ToList(command).ToList();
             }
-        }
+        }        
     }
 }
 

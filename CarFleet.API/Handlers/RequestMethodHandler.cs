@@ -9,11 +9,11 @@ namespace CarFleet.API.Handlers
     {
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            if (request.Headers.Contains("Origin") && request.Method == HttpMethod.Options)
+            if (request.Headers.Contains("Origin") && request.Method == HttpMethod.Options)            
             {
                 var response = new HttpResponseMessage(HttpStatusCode.OK);
                 //response.Headers.Add("Access-Control-Allow-Origin", "*");
-                response.Headers.Add("Access-Control-Allow-Methods", "PUT, POST, DELETE");
+                response.Headers.Add("Access-Control-Allow-Methods", "PUT, POST, DELETE, OPTIONS");
                 response.Headers.Add("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
                 return response;
             }

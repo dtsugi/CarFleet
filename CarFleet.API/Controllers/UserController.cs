@@ -29,9 +29,9 @@ namespace CarFleet.API.Controllers
                 }
                 else
                 {
-                    userEntity = _UserLogic.Login("ManuelM");
-                    //response = Request.CreateResponse(HttpStatusCode.PreconditionFailed, false);
-                    response = Request.CreateResponse(HttpStatusCode.OK, userEntity);
+                    //userEntity = _UserLogic.Login("ManuelM");
+                    response = Request.CreateResponse(HttpStatusCode.PreconditionFailed, false);
+                    //response = Request.CreateResponse(HttpStatusCode.OK, userEntity);
                 }
                 return response;
             }

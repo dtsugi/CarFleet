@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigTagLogic.cs" />
+    <Compile Include="FunctionsLogic.cs" />
     <Compile Include="UserFleetLogic.cs" />
     <Compile Include="ConfigTagLanguageLogic.cs" />
     <Compile Include="UserLogic.cs" />

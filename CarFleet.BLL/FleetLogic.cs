@@ -10,7 +10,16 @@ namespace CarFleet.BLL
 
         public List<FleetEntity> GetByCompanyId(int idCompany)
         {
-            return _FleetCrud.SelectByCompanyId(idCompany);
+            List<FleetEntity> listFleet = _FleetCrud.SelectByCompanyId(idCompany);
+            if (listFleet != null)
+            {
+                FunctionsLogic functionsLogic = new FunctionsLogic();
+                foreach (FleetEntity entity in listFleet)
+                {
+                    entity.TotalVehicle = functionsLogic.GetTotalVehicleByCompanyAndFleetId(entity.Id_company, entity.Id);
+                }
+            }
+            return listFleet;
         }
     }
 }
