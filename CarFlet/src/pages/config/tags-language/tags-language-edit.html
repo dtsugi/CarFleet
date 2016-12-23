@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Actualizar etiqueta</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item>
+        <ion-label>Tag key</ion-label>
+        <ion-label> {{tagLanguageSelected.Tag_key}}</ion-label>
+    </ion-item>
+    <br>
+    <ion-item>
+        <ion-label>Valor</ion-label>
+        <ion-input type="text" [(ngModel)]="tagLanguageSelected.Value_tag"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button full color="secondary" (click)="update()">Actualizar</button>
+</ion-content>

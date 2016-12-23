@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Vehiculos de la flota "{{fleetSelected.Name}}"</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar (ionInput)="searchVehicle($event)"></ion-searchbar>
+    <ion-list>
+        <ion-item *ngFor="let vehicle of vehicleList" (click)="viewVehicle(vehicle)">
+            <ion-avatar item-left>
+                <img src="assets/img/vehicleListIcon.png">
+            </ion-avatar>
+            <h2>{{vehicle.Name}}</h2>
+            <h2>{{vehicle.Plate}}</h2>
+            <p>{{vehicle.Model}}</p>
+        </ion-item>
+    </ion-list>
+</ion-content>
