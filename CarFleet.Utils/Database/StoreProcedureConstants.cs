@@ -38,6 +38,7 @@ namespace CarFleet.Utils.Database
         /* ConfigUserLogin */
         public const string stp_ConfigUserLoginInsert = "stp_ConfigUserLoginInsert";
         public const string stp_ConfigUserLoginSelectByUserTokenUUID = "stp_ConfigUserLoginSelectByUserTokenUUID";
+        public const string stp_ConfigUserUpdateExpirationTimestamp = "stp_ConfigUserUpdateExpirationTimestamp";
         /* UserRestore */
         public const string stp_UserRestoreInsert = "stp_UserRestoreInsert";
         public const string stp_UserRestoreSelectByUserCode = "stp_UserRestoreSelectByUserCode";

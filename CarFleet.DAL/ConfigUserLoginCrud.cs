@@ -49,6 +49,21 @@ namespace CarFleet.DAL
                 return ToList(command).FirstOrDefault();
             }
         }
+
+        public bool UpdateExpirationTimestamp(int idUser, string token, string deviceUUID, DateTime expirationTimestamp)
+        {
+            using (var command = base.GetContextConnection.CreateCommand())
+            {
+                command.AddParameter("ID_USER_OUT", SqlDbType.Int, idUser);
+                command.AddParameter("TOKEN_OUT", SqlDbType.VarChar, token);
+                command.AddParameter("DEVICE_UUID_OUT", SqlDbType.VarChar, deviceUUID);
+                command.AddParameter("EXPIRATION_TIMESTAMP_OUT", SqlDbType.DateTime, expirationTimestamp);
+                command.CommandText = StoreProcedureConstants.stp_ConfigUserUpdateExpirationTimestamp;
+                command.CommandType = CommandType.StoredProcedure;
+                int affectedRows = command.ExecuteNonQuery();
+                return (affectedRows > 0 ? true : false);
+            }
+        }
     }
 }
 

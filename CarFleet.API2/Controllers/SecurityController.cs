@@ -25,7 +25,7 @@ namespace CarFleet.API2.Controllers
             {
                 HttpResponseMessage response;
                 int timeExpireSession = _secCarFleet.GetTimeExpireSession();
-                if (_ConfigUserLoginLogic.IsAuthenticated(userSession.IdUser, userSession.Token, userSession.DeviceUUID, timeExpireSession))
+                if (_ConfigUserLoginLogic.IsAuthenticated(userSession.IdUser, userSession.Token, userSession.DeviceUUID, timeExpireSession, userSession.StaySession))
                 {
                     response = Request.CreateResponse(HttpStatusCode.OK, true);
                 }
