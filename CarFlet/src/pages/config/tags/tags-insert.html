@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Nueva etiqueta</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item>
+        <ion-label>Tag key</ion-label>
+        <ion-input type="text" [(ngModel)]="configTag.Tag_key"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+        <ion-label>Page name</ion-label>
+        <ion-input type="text" [(ngModel)]="configTag.Page_name"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button full color="secondary" (click)="saveConfigTag()">Insertar</button>
+</ion-content>

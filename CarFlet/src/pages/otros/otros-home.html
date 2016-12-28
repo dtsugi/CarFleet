@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>{{lblOtTitlePage.Value}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+
+
+    <ion-list>
+        <ion-item (click)="goListFleets()">
+            <ion-thumbnail item-left>
+                <img src="assets/img/fleet_icon.png" width="50" height="30">
+            </ion-thumbnail>
+            <h1>{{lblOtItemFlotas.Value}}</h1>
+            <h2>Total:{{totalCountFleet}}</h2>
+
+        </ion-item>
+        <ion-item (click)="goListVehicles()">
+            <ion-thumbnail item-left>
+                <img src="assets/img/vehicle_icon.png" width="50" height="30">
+            </ion-thumbnail>
+            <h1>{{lblOtItemVehiculos.Value}}</h1>
+            <h2>Total:{{totalCountVehicle}}</h2>
+        </ion-item>
+        <ion-item (click)="goListDrivers()">
+            <ion-thumbnail item-left>
+                <img src="assets/img/driver_icon.png" width="50" height="30">
+            </ion-thumbnail>
+            <h1>{{lblOtItemConductores.Value}}</h1>
+            <h2>Total:{{totalCountDriver}}</h2>
+        </ion-item>
+        <ion-item (click)="goListMaintenance()">
+            <ion-thumbnail item-left>
+                <img src="assets/img/maintenance_icon.png" width="50" height="30">
+            </ion-thumbnail>
+            <h1>{{lblOtItemOpcMantenimiento.Value}}</h1>
+        </ion-item>
+    </ion-list>
+</ion-content>

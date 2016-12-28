@@ -1,0 +1,27 @@
+
+  .sectionCard {
+    position: relative;    
+    text-align: center;    
+  }
+
+  .sectionCard-img{
+    height: 220px;
+    max-height: 220px;
+  }
+
+  .sectionCard-title {
+    position: absolute;    
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;    
+    top: 25%;
+  }
+
+  .sectionCard-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }

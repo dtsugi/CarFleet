@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Lugares frecuentados</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <!--<button ion-button full onclick="drawChartJS()">Touch me for generate graph ChartJS!!</button>-->
+    <button ion-button full onclick="GenerateLugaresFrecuentados('divGenerateLugaresFrecuentados')">Ver grafico</button>
+    <br>
+    <canvas id="divGenerateLugaresFrecuentados" width="100%" height="100%"></canvas>
+</ion-content>
