@@ -14,6 +14,8 @@ namespace CarFleet.Utils.Database
         public const string stp_UserLogin = "stp_UserLogin";
         public const string stp_UserUpdateLanguage = "stp_UserUpdateLanguage";
         public const string stp_UserFleetSelectByUserId = "stp_UserFleetSelectByUserId";
+        public const string stp_UserSelectByLogin = "stp_UserSelectByLogin";
+        public const string stp_UserUpdatePassword = "stp_UserUpdatePassword";
         /* Fleet */
         public const string stp_FleetSelectByCompanyId = "stp_FleetSelectByCompanyId";
         public const string stp_FleetTotalByCompanyId = "stp_FleetTotalByCompanyId";
@@ -33,5 +35,11 @@ namespace CarFleet.Utils.Database
         public const string stp_ConfigTagLanguageSelectByLanguage = "stp_ConfigTagLanguageSelectByLanguage";
         public const string stp_ConfigTagLanguageInsert = "stp_ConfigTagLanguageInsert";
         public const string stp_ConfigTagLanguageUpdate = "stp_ConfigTagLanguageUpdate";
+        /* ConfigUserLogin */
+        public const string stp_ConfigUserLoginInsert = "stp_ConfigUserLoginInsert";
+        public const string stp_ConfigUserLoginSelectByUserTokenUUID = "stp_ConfigUserLoginSelectByUserTokenUUID";
+        /* UserRestore */
+        public const string stp_UserRestoreInsert = "stp_UserRestoreInsert";
+        public const string stp_UserRestoreSelectByUserCode = "stp_UserRestoreSelectByUserCode";
     }
 }

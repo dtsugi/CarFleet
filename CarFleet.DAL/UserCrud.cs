@@ -29,11 +29,12 @@ namespace CarFleet.DAL
             if (base.HasValueRecord(record, "user_validated")) { entity.User_validated = (bool)base.GetValueRecord(record["user_validated"], Utils.Constants.DATA_TYPES.BIT); }
         }
 
-        public UserEntity Login(string loginName)
+        public UserEntity Login(string loginName, string password)
         {
             using (var command = base.GetContextConnection.CreateCommand())
             {
                 command.AddParameter("LOGIN_OUT", SqlDbType.NVarChar, loginName);
+                command.AddParameter("PASSWORD_OUT", SqlDbType.NVarChar, password);
                 command.CommandText = StoreProcedureConstants.stp_UserLogin;
                 command.CommandType = CommandType.StoredProcedure;
                 return ToList(command).FirstOrDefault();
@@ -49,6 +50,30 @@ namespace CarFleet.DAL
                 command.CommandText = StoreProcedureConstants.stp_UserUpdateLanguage;
                 command.CommandType = CommandType.StoredProcedure;
                 command.ExecuteNonQuery();
+            }
+        }
+
+        public UserEntity SelectByLoginName(string loginName)
+        {
+            using (var command = base.GetContextConnection.CreateCommand())
+            {
+                command.AddParameter("LOGIN_OUT", SqlDbType.NVarChar, loginName);
+                command.CommandText = StoreProcedureConstants.stp_UserSelectByLogin;
+                command.CommandType = CommandType.StoredProcedure;
+                return ToList(command).FirstOrDefault();
+            }
+        }
+
+        public bool UpdatePassword(int idUser, string password)
+        {
+            using (var command = base.GetContextConnection.CreateCommand())
+            {
+                command.AddParameter("ID_OUT", SqlDbType.Int, idUser);
+                command.AddParameter("PASSWORD_OUT", SqlDbType.NVarChar, password);
+                command.CommandText = StoreProcedureConstants.stp_UserUpdatePassword;
+                command.CommandType = CommandType.StoredProcedure;
+                int rowsAffected = command.ExecuteNonQuery();
+                return (rowsAffected > 0 ? true : false);
             }
         }
     }

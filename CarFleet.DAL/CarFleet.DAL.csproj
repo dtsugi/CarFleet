@@ -38,7 +38,9 @@
   <ItemGroup>
     <Compile Include="ConfigTagLanguageCrud.cs" />
     <Compile Include="ConfigTagCrud.cs" />
+    <Compile Include="UserRestoreCrud.cs" />
     <Compile Include="FunctionsCrud.cs" />
+    <Compile Include="ConfigUserLoginCrud.cs" />
     <Compile Include="UserFleetCrud.cs" />
     <Compile Include="UserCrud.cs" />
     <Compile Include="LanguageCrud.cs" />

@@ -38,6 +38,8 @@
   <ItemGroup>
     <Compile Include="ConfigTagLanguageEntity.cs" />
     <Compile Include="ConfigTagEntity.cs" />
+    <Compile Include="UserRestoreEntity.cs" />
+    <Compile Include="ConfigUserLoginEntity.cs" />
     <Compile Include="FunctionsEntity.cs" />
     <Compile Include="UserFleetEntity.cs" />
     <Compile Include="UserEntity.cs" />

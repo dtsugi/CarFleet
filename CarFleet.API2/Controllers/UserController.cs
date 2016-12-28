@@ -1,4 +1,6 @@
-﻿using CarFleet.BLL;
+﻿using CarFleet.API2.Models;
+using CarFleet.API2.Security;
+using CarFleet.BLL;
 using CarFleet.Models;
 using System;
 using System.Collections.Generic;
@@ -14,30 +16,45 @@ namespace CarFleet.API2.Controllers
     public class UserController : ApiController
     {
         private UserLogic _UserLogic = new UserLogic();
+        private ConfigUserLoginLogic _ConfigUserLoginLogic = new ConfigUserLoginLogic();
+        private CarFleetSecurity _secCarFleet = CarFleetSecurity.GetContext;
 
         [HttpPost, Route("api/User/Login")]
-        [ResponseType(typeof(string))]
-        public async Task<HttpResponseMessage> Login(string loginName)
+        [ResponseType(typeof(UserSessionDto))]
+        public async Task<HttpResponseMessage> Login(UserSessionDto userSession)
         {
             try
             {
                 HttpResponseMessage response;
-                UserEntity userEntity = _UserLogic.Login(loginName);
+                UserEntity userEntity = _UserLogic.Login(userSession.UserName,userSession.Password);
                 if (userEntity != null)
                 {
-                    response = Request.CreateResponse(HttpStatusCode.OK, userEntity);
+                    int timeExpireSession = _secCarFleet.GetTimeExpireSession();
+                    string token = String.Empty;
+                    if (userSession.StaySession && !string.IsNullOrEmpty(userSession.Token))
+                    {
+                        token = _ConfigUserLoginLogic.LoginByToken(userEntity.Id, userSession.Token, userSession.DeviceUUID, timeExpireSession);
+                    }
+                    else
+                    {
+                        token = _ConfigUserLoginLogic.Insert(userEntity.Id, userSession.DeviceUUID, timeExpireSession);
+                    }
+                    if (!string.IsNullOrEmpty(token))
+                    {
+                        userSession.IdUser = userEntity.Id;
+                        userSession.IdCompany = userEntity.Id_company;
+                        userSession.IdLanguage = userEntity.Id_language;
+                        userSession.Token = token;
+                        response = Request.CreateResponse(HttpStatusCode.OK, userSession);
+                    }
+                    else { response = Request.CreateResponse(HttpStatusCode.PreconditionFailed, new { Message = "Falló la generación del token en la aplicación" }); }
                 }
-                else
-                {
-                    response = Request.CreateResponse(HttpStatusCode.PreconditionFailed, false);
-                    //userEntity = _UserLogic.Login("ManuelM");                    
-                    //response = Request.CreateResponse(HttpStatusCode.OK, userEntity);
-                }
+                else { response = Request.CreateResponse(HttpStatusCode.PreconditionFailed, new { Message = "Nombre de usuario o password incorrectos" }); }
                 return response;
             }
             catch (Exception ex)
             {
-                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Error al loguearse"));
+                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Error en el login"));
             }
         }
 
@@ -56,6 +73,6 @@ namespace CarFleet.API2.Controllers
             {
                 throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Error al actualizar el lenguaje del usuario"));
             }
-        }
+        }        
     }
 }
