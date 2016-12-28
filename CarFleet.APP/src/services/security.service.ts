@@ -43,16 +43,16 @@ export class SecurityService {
     logout() {
         this.userSession = this.getInitialConfigSession();
         /* Si se mantiene la session no se borran los datos */
-        if (!this.userSession.StaySession) {
-            localStorage.removeItem(ConstantsConfig.USER_ID_LS);
-            localStorage.removeItem(ConstantsConfig.USER_NAME_LS);
-            localStorage.removeItem(ConstantsConfig.USER_PASSWORD_LS);
-            localStorage.removeItem(ConstantsConfig.USER_TOKEN_LS);
-            localStorage.removeItem(ConstantsConfig.USER_DEVICE_UUID_LS);
-            localStorage.removeItem(ConstantsConfig.USER_STAY_SESSION_LS);
-            localStorage.removeItem(ConstantsConfig.USER_COMPANY_ID_LS);
-            localStorage.removeItem(ConstantsConfig.USER_LANGUAGE_ID_LS);
-        }
+        // if (!this.userSession.StaySession) {
+        localStorage.removeItem(ConstantsConfig.USER_ID_LS);
+        localStorage.removeItem(ConstantsConfig.USER_NAME_LS);
+        localStorage.removeItem(ConstantsConfig.USER_PASSWORD_LS);
+        localStorage.removeItem(ConstantsConfig.USER_TOKEN_LS);
+        localStorage.removeItem(ConstantsConfig.USER_DEVICE_UUID_LS);
+        localStorage.removeItem(ConstantsConfig.USER_STAY_SESSION_LS);
+        localStorage.removeItem(ConstantsConfig.USER_COMPANY_ID_LS);
+        localStorage.removeItem(ConstantsConfig.USER_LANGUAGE_ID_LS);
+        // }
     }
 
     isAuthenticated() {
